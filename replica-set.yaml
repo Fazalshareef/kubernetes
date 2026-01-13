@@ -1,0 +1,21 @@
+apiVersion: apps/v1                # API version for ReplicaSet
+kind: ReplicaSet                   # Resource type
+metadata:
+  name: nginx-rs                   # ReplicaSet name
+  labels:
+    app: web                       # Label for the ReplicaSet
+spec:
+  replicas: 3                      # Number of pod replicas to run
+  selector:
+    matchLabels:
+      app: web                     # Selector must match pod labels
+  template:                        # Pod template (same as Pod YAML)
+    metadata:
+      labels:
+        app: web                   # Labels applied to pods
+    spec:
+      containers:
+        - name: nginx-container    # Container name
+          image: nginx:latest      # Docker image
+          ports:
+            - containerPort: 80    # Exposed container port
