@@ -1,0 +1,14 @@
+apiVersion: v1                 # API version for Kubernetes core objects
+kind: Pod                      # We are creating a Pod (smallest deployable unit)
+
+metadata:
+  name: nginx                  # Name of the Pod
+  labels:                      # Labels help identify and group pods
+    app: nginx                 # Label: app name = nginx
+    tier: frontend             # Label: tier = frontend (useful for service selection)
+
+spec: 
+  containers:
+    - name: nginx              # Name of the container inside the Pod
+      image: nginx             # Container image to use (pulled from Docker Hub by default)
+                               # This will run the Nginx web server
