@@ -7,12 +7,12 @@ spec:
   selector:
     matchLabels:
       app: nginx
-      colour: green
+      color: green
   template: 
     metadata:
       labels:
         app: nginx
-        colour: green
+        color: green
     spec: 
       containers: 
        - name : nginx
