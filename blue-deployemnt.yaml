@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mginx-blue
+spec: 
+  replicas: 5
+  selector:
+    matchLabels:
+      app: nginx
+      colour: blue
+  template: 
+    metadata: 
+      labels: 
+        name: nginx
+        colour: blue
+    spec:
+      containers: 
+        - name: nginx
+          image: nginx:1.24
+          
+                      
